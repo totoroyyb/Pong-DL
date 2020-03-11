@@ -84,18 +84,34 @@ for frame_idx in range(1, num_frames + 1):
         target_model.copy_from(model)
         torch.save(model.state_dict(), "pong_model.pth")
 
-all_rewards_file = open("all_rewards_record.txt", "w")
-if all_rewards_file.writable():
-    for ele in all_rewards:
-        all_rewards_file.write(str(ele[0]) + " , " + str(ele[1]) + "\n")
-    all_rewards_file.close()
-else:
-    print("Cannot write to reward file")
+        all_rewards_file = open("all_rewards_record.txt", "w")
+        if all_rewards_file.writable():
+            for ele in all_rewards:
+                all_rewards_file.write(str(ele[0]) + " , " + str(ele[1]) + "\n")
+            all_rewards_file.close()
+        else:
+            print("Cannot write to reward file")
 
-loss_file = open("losses_record.txt", "w")
-if loss_file.writable():
-    for ele in losses:
-        loss_file.write(str(ele[0]) + " , " + str(ele[1].item(0)) + "\n")
-    loss_file.close()
-else:
-    print("Cannot write to lossess file")
+        loss_file = open("losses_record.txt", "w")
+        if loss_file.writable():
+            for ele in losses:
+                loss_file.write(str(ele[0]) + " , " + str(ele[1].item(0)) + "\n")
+            loss_file.close()
+        else:
+            print("Cannot write to lossess file")
+
+# all_rewards_file = open("all_rewards_record.txt", "w")
+# if all_rewards_file.writable():
+#     for ele in all_rewards:
+#         all_rewards_file.write(str(ele[0]) + " , " + str(ele[1]) + "\n")
+#     all_rewards_file.close()
+# else:
+#     print("Cannot write to reward file")
+#
+# loss_file = open("losses_record.txt", "w")
+# if loss_file.writable():
+#     for ele in losses:
+#         loss_file.write(str(ele[0]) + " , " + str(ele[1].item(0)) + "\n")
+#     loss_file.close()
+# else:
+#     print("Cannot write to lossess file")

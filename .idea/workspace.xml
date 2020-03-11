@@ -26,7 +26,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Python.run_dqn_pong">
+  <component name="RunManager" selected="Python.test_dqn_pong">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Starter Code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,7 +85,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_dqn_pong.py" />
-      <option name="PARAMETERS" value="model_pretrained.pth -g" />
+      <option name="PARAMETERS" value="pong_model.pth -g" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -116,36 +116,36 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="968" y="519" width="710" height="519" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583913613725">
+    <state x="968" y="519" width="710" height="519" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583957660910">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state x="541" y="328" width="710" height="519" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1583358742191" />
-    <state x="968" y="519" width="1071" height="696" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.3008.1669@0.23.3008.1669" timestamp="1583913613725" />
+    <state x="968" y="519" width="1071" height="696" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.3008.1669@0.23.3008.1669" timestamp="1583957660910" />
     <state x="661" y="419" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583358079083">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="661" y="419" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.1027@0.23.1680.1027" timestamp="1583358079083" />
     <state x="1183" y="667" key="#com.intellij.fileTypes.FileTypeChooser/0.23.3008.1669@0.23.3008.1669" timestamp="1583308851037" />
-    <state width="1731" height="344" key="GridCell.Tab.0.bottom" timestamp="1583917772194">
+    <state width="1731" height="319" key="GridCell.Tab.0.bottom" timestamp="1583958175771">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055330" />
-    <state width="1731" height="344" key="GridCell.Tab.0.bottom/0.23.3008.1669@0.23.3008.1669" timestamp="1583917772194" />
-    <state width="1731" height="344" key="GridCell.Tab.0.center" timestamp="1583917772194">
+    <state width="1731" height="319" key="GridCell.Tab.0.bottom/0.23.3008.1669@0.23.3008.1669" timestamp="1583958175771" />
+    <state width="1731" height="319" key="GridCell.Tab.0.center" timestamp="1583958175770">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055330" />
-    <state width="1731" height="344" key="GridCell.Tab.0.center/0.23.3008.1669@0.23.3008.1669" timestamp="1583917772194" />
-    <state width="1731" height="344" key="GridCell.Tab.0.left" timestamp="1583917772193">
+    <state width="1731" height="319" key="GridCell.Tab.0.center/0.23.3008.1669@0.23.3008.1669" timestamp="1583958175770" />
+    <state width="1731" height="319" key="GridCell.Tab.0.left" timestamp="1583958175769">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055329" />
-    <state width="1731" height="344" key="GridCell.Tab.0.left/0.23.3008.1669@0.23.3008.1669" timestamp="1583917772193" />
-    <state width="1731" height="344" key="GridCell.Tab.0.right" timestamp="1583917772194">
+    <state width="1731" height="319" key="GridCell.Tab.0.left/0.23.3008.1669@0.23.3008.1669" timestamp="1583958175769" />
+    <state width="1731" height="319" key="GridCell.Tab.0.right" timestamp="1583958175770">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055330" />
-    <state width="1731" height="344" key="GridCell.Tab.0.right/0.23.3008.1669@0.23.3008.1669" timestamp="1583917772194" />
+    <state width="1731" height="319" key="GridCell.Tab.0.right/0.23.3008.1669@0.23.3008.1669" timestamp="1583958175770" />
     <state x="1555" y="549" width="683" height="729" key="find.popup" timestamp="1583916141049">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
@@ -164,6 +164,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Starter_Code$run_dqn_pong.coverage" NAME="run_dqn_pong Coverage Results" MODIFIED="1583917772183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Starter_Code$test_dqn_pong.coverage" NAME="test_dqn_pong Coverage Results" MODIFIED="1583898011302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Starter_Code$test_dqn_pong.coverage" NAME="test_dqn_pong Coverage Results" MODIFIED="1583958175764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
