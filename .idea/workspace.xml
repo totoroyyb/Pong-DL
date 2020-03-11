@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4044e8d-a6bd-4aa7-ac16-4c83e3c9cbab" name="Default Changelist" comment="" />
+    <list default="true" id="f4044e8d-a6bd-4aa7-ac16-4c83e3c9cbab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_dqn_pong.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_dqn_pong.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +14,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Yeh7pHbNY8S33jVD5P13DWeD8r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -104,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583308803163</updated>
-      <workItem from="1583308812863" duration="26912000" />
+      <workItem from="1583308812863" duration="27272000" />
     </task>
     <servers />
   </component>
@@ -142,13 +146,17 @@
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055330" />
     <state width="1826" height="319" key="GridCell.Tab.0.right/0.23.3008.1669@0.23.3008.1669" timestamp="1583915752727" />
+    <state x="1555" y="549" width="683" height="729" key="find.popup" timestamp="1583916141049">
+      <screen x="0" y="23" width="3008" height="1669" />
+    </state>
+    <state x="1555" y="549" width="683" height="729" key="find.popup/0.23.3008.1669@0.23.3008.1669" timestamp="1583916141049" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/run_dqn_pong.py</url>
-          <line>74</line>
+          <line>78</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
