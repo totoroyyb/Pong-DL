@@ -50,7 +50,7 @@ class QLearner(nn.Module):
             # TODO: Given state, you should write code to get the Q value and chosen action
             values = self.forward(state)
             max_value = values.max().item()
-            action = (values == max_value).nonzero().data[0].numpy()[1]
+            action = ((values == max_value).nonzero().squeeze(0))[1].item()
             return action
             # action = (values == max_value).nonzero().max().item()
 
