@@ -52,7 +52,6 @@ class QLearner(nn.Module):
             max_value = values.max().item()
             action = ((values == max_value).nonzero().squeeze(0))[1].item()
             return action
-            # action = (values == max_value).nonzero().max().item()
 
 
         else:
@@ -75,9 +74,8 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     loss = 0
 
     for i in range(batch_size):
-        if done.numpy()[i] == 1:
+        if done[i].item() == 1:
             continue
-        # test = target_model.forward(next_state[i])
         next_state_max_q = target_model.forward(next_state[i]).max()
         target = reward[i] + gamma * next_state_max_q
         curr_action = action[i].item()
