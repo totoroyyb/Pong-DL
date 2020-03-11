@@ -49,11 +49,6 @@ episode_reward = 0
 
 state = env.reset()
 
-
-def compareFirst(elem):
-    return elem[0]
-
-
 for frame_idx in range(1, num_frames + 1):
     # print("Frame: " + str(frame_idx))
 
@@ -88,7 +83,6 @@ for frame_idx in range(1, num_frames + 1):
     if frame_idx % 50000 == 0:
         target_model.copy_from(model)
         torch.save(model.state_dict(), "pong_model.pth")
-
 
 all_rewards_file = open("all_rewards_record.txt", "w")
 if all_rewards_file.writable():
