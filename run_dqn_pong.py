@@ -92,7 +92,7 @@ for frame_idx in range(1, num_frames + 1):
 
 all_rewards_file = open("all_rewards_record.txt", "w")
 if all_rewards_file.writable():
-    for ele in sorted(all_rewards, key=compareFirst):
+    for ele in all_rewards:
         all_rewards_file.write(str(ele[0]) + " , " + str(ele[1]) + "\n")
     all_rewards_file.close()
 else:
@@ -100,7 +100,7 @@ else:
 
 loss_file = open("losses_record.txt", "w")
 if loss_file.writable():
-    for ele in sorted(losses, key=compareFirst):
+    for ele in losses:
         loss_file.write(str(ele[0]) + " , " + str(ele[1].item(0)) + "\n")
     loss_file.close()
 else:
