@@ -1,0 +1,14 @@
+Using cuda
+#Frame: 10000, preparing replay buffer
+Traceback (most recent call last):
+  File "run_dqn_pong.py", line 56, in <module>
+    action = model.act(state, epsilon)
+  File "/home/ybyan/Pong-DL/dqn.py", line 49, in act
+    state = Variable(torch.FloatTensor(np.float32(state)).unsqueeze(0), requires_grad=True)
+  File "/home/ybyan/Pong-DL/dqn.py", line 9, in <lambda>
+    Variable = lambda *args, **kwargs: autograd.Variable(*args, **kwargs).cuda() if USE_CUDA else autograd.Variable(*args, **kwargs)
+KeyboardInterrupt
+Exception ignored in: <function WeakValueDictionary.__init__.<locals>.remove at 0x7f5055fae268>
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/weakref.py", line 117, in remove
+TypeError: 'NoneType' object is not callable
