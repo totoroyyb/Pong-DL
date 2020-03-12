@@ -73,7 +73,7 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     done = Variable(torch.FloatTensor(done))
     # implement the loss function here
     loss = 0
-    print("Start to computer loss")
+    # print("Start to computer loss")
     start_time = time.perf_counter()
 
     for i in range(batch_size):
@@ -92,8 +92,11 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
 
     if torch.cuda.is_available():
         loss = loss.cuda()
+
     end_time = time.perf_counter()
-    print("Finish to computer loss, takes " + str(end_time - start_time) + " seconds")
+
+    if (end_time - start_time) > 1:
+        print("Finish to computer loss, takes " + str(end_time - start_time) + " seconds")
     
     return loss
 
@@ -110,7 +113,7 @@ class ReplayBuffer(object):
 
     def sample(self, batch_size):
         # TODO: Randomly sampling data with specific batch size from the buffer
-        print("Sample Start")
+        # print("Sample Start")
         start_time = time.perf_counter()
         samples = random.sample(self.buffer, batch_size)
         state = list(map(lambda x: x[0], samples))
@@ -119,7 +122,9 @@ class ReplayBuffer(object):
         next_state = list(map(lambda x: x[3], samples))
         done = list(map(lambda x: x[4], samples))
         end_time = time.perf_counter()
-        print("Sample End, takes " + str(end_time - start_time) + "seconds\n")
+
+        if (end_time - start_time) > 1:
+            print("Sample End, takes " + str(end_time - start_time) + "seconds\n")
 
         return state, action, reward, next_state, done
 
