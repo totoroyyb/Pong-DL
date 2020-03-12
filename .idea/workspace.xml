@@ -123,26 +123,26 @@
     </state>
     <state x="661" y="419" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.1027@0.23.1680.1027" timestamp="1583358079083" />
     <state x="1183" y="667" key="#com.intellij.fileTypes.FileTypeChooser/0.23.3008.1669@0.23.3008.1669" timestamp="1583308851037" />
-    <state width="1462" height="182" key="GridCell.Tab.0.bottom" timestamp="1584047446488">
+    <state width="1462" height="182" key="GridCell.Tab.0.bottom" timestamp="1584051342516">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055330" />
-    <state width="1462" height="182" key="GridCell.Tab.0.bottom/0.23.3008.1669@0.23.3008.1669" timestamp="1584047446488" />
-    <state width="1462" height="182" key="GridCell.Tab.0.center" timestamp="1584047446487">
+    <state width="1462" height="182" key="GridCell.Tab.0.bottom/0.23.3008.1669@0.23.3008.1669" timestamp="1584051342516" />
+    <state width="1462" height="182" key="GridCell.Tab.0.center" timestamp="1584051342515">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055330" />
-    <state width="1462" height="182" key="GridCell.Tab.0.center/0.23.3008.1669@0.23.3008.1669" timestamp="1584047446487" />
-    <state width="1462" height="182" key="GridCell.Tab.0.left" timestamp="1584047446487">
+    <state width="1462" height="182" key="GridCell.Tab.0.center/0.23.3008.1669@0.23.3008.1669" timestamp="1584051342515" />
+    <state width="1462" height="182" key="GridCell.Tab.0.left" timestamp="1584051342515">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055329" />
-    <state width="1462" height="182" key="GridCell.Tab.0.left/0.23.3008.1669@0.23.3008.1669" timestamp="1584047446487" />
-    <state width="1462" height="182" key="GridCell.Tab.0.right" timestamp="1584047446488">
+    <state width="1462" height="182" key="GridCell.Tab.0.left/0.23.3008.1669@0.23.3008.1669" timestamp="1584051342515" />
+    <state width="1462" height="182" key="GridCell.Tab.0.right" timestamp="1584051342515">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
     <state width="1638" height="344" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1583898055330" />
-    <state width="1462" height="182" key="GridCell.Tab.0.right/0.23.3008.1669@0.23.3008.1669" timestamp="1584047446488" />
+    <state width="1462" height="182" key="GridCell.Tab.0.right/0.23.3008.1669@0.23.3008.1669" timestamp="1584051342515" />
     <state x="1555" y="549" width="683" height="729" key="find.popup" timestamp="1583916141049">
       <screen x="0" y="23" width="3008" height="1669" />
     </state>
@@ -161,6 +161,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Starter_Code$run_dqn_pong.coverage" NAME="run_dqn_pong Coverage Results" MODIFIED="1583984432303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Starter_Code$test_dqn_pong.coverage" NAME="test_dqn_pong Coverage Results" MODIFIED="1584047446478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Starter_Code$test_dqn_pong.coverage" NAME="test_dqn_pong Coverage Results" MODIFIED="1584051342508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
