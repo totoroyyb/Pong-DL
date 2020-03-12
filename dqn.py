@@ -77,12 +77,12 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     # start_time = time.perf_counter()
 
     for i in range(batch_size):
-        next_state_max_q = target_model.forward(next_state[i].cuda()).max()
+        next_state_max_q = target_model.forward(next_state[i]).max()
         predict = reward[i]
         if done[i].item() != 1:
             predict += gamma * next_state_max_q
         curr_action = action[i].item()
-        target = model.forward(state[i].cuda()).squeeze(0)[curr_action]
+        target = model.forward(state[i]).squeeze(0)[curr_action]
         loss += pow(predict - target, 2)
         # curr_action = action[i].item()
         # next_state_max_q = target_model.forward(next_state[i]).max()
@@ -125,7 +125,7 @@ class ReplayBuffer(object):
         # if (end_time - start_time) > 1:
         #     print("Sample End, takes " + str(end_time - start_time) + "seconds\n")
 
-        return np.concatenate(state), action, reward, np.concatenate(next_state), done
+        return state, action, reward, next_state, done
 
     def __len__(self):
         return len(self.buffer)
