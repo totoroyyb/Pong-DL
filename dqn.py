@@ -46,18 +46,18 @@ class QLearner(nn.Module):
             return self.features(autograd.Variable(torch.zeros(1, *self.input_shape))).view(1, -1).size(1)
     
     def act(self, state, epsilon):
+        action = random.randrange(self.env.action_space.n)
+
         if random.random() > epsilon:
             state = Variable(torch.FloatTensor(np.float32(state)).unsqueeze(0), requires_grad=True)
             # TODO: Given state, you should write code to get the Q value and chosen action
-            values = self.forward(state)
-            max_value = values.max().item()
-            action = ((values == max_value).nonzero().squeeze(0))[1].item()
-            return action
+            with torch.no_grad():
+                action = torch.argmax(self.forward(state.cuda()))
+            # values = self.forward(state)
+            # max_value = values.max().item()
+            # action = ((values == max_value).nonzero().squeeze(0))[1].item()
 
-
-        else:
-            action = random.randrange(self.env.action_space.n)
-            return action
+        return action
 
     def copy_from(self, target):
         self.load_state_dict(target.state_dict())
@@ -73,6 +73,7 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     done = Variable(torch.FloatTensor(done))
     # implement the loss function here
     loss = 0
+    loss = loss.cuda()
     # print("Start to computer loss")
     start_time = time.perf_counter()
 
@@ -80,18 +81,15 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
         if done[i].item() == 1:
             continue
         curr_action = action[i].item()
-        next_state_max_q = model.forward(next_state[i]).squeeze(0)[curr_action]
+        next_state_max_q = model.forward(next_state[i].cuda()).squeeze(0)[curr_action]
         predict = reward[i] + gamma * next_state_max_q
-        target = target_model.forward(state[i]).max()
+        target = target_model.forward(state[i].cuda()).max()
         loss += pow(predict - target, 2)
         # curr_action = action[i].item()
         # next_state_max_q = target_model.forward(next_state[i]).max()
         # target = reward[i] + gamma * next_state_max_q
         # predict = model.forward(state[i]).squeeze(0)[curr_action]
         # loss += pow(target - predict, 2)
-
-    if torch.cuda.is_available():
-        loss = loss.cuda()
 
     end_time = time.perf_counter()
 
