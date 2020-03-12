@@ -73,7 +73,6 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     done = Variable(torch.FloatTensor(done))
     # implement the loss function here
     loss = 0
-    loss = loss.cuda()
     # print("Start to computer loss")
     start_time = time.perf_counter()
 
@@ -90,6 +89,8 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
         # target = reward[i] + gamma * next_state_max_q
         # predict = model.forward(state[i]).squeeze(0)[curr_action]
         # loss += pow(target - predict, 2)
+
+    loss = loss.cuda()
 
     end_time = time.perf_counter()
 
