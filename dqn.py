@@ -93,8 +93,7 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     if torch.cuda.is_available():
         loss = loss.cuda()
     end_time = time.perf_counter()
-    print(f"Finish to computer loss, takes {end_time - start_time:0.8f} seconds")
-    print("")
+    print(f"Finish to computer loss, takes " + str(end_time - start_time) + " seconds")
     
     return loss
 
@@ -120,8 +119,8 @@ class ReplayBuffer(object):
         next_state = list(map(lambda x: x[3], samples))
         done = list(map(lambda x: x[4], samples))
         end_time = time.perf_counter()
-        print(f"Sample End, takes {end_time - start_time:0.8f} seconds")
-        print("")
+        print(f"Sample End, takes " + str(end_time - start_time) + "seconds\n")
+
         return state, action, reward, next_state, done
 
     def __len__(self):
