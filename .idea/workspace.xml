@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4044e8d-a6bd-4aa7-ac16-4c83e3c9cbab" name="Default Changelist" comment="" />
+    <list default="true" id="f4044e8d-a6bd-4aa7-ac16-4c83e3c9cbab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/dqn.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

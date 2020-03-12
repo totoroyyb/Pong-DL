@@ -114,18 +114,18 @@ class ReplayBuffer(object):
         # TODO: Randomly sampling data with specific batch size from the buffer
         # print("Sample Start")
         # start_time = time.perf_counter()
-        samples = random.sample(self.buffer, batch_size)
-        state = list(map(lambda x: x[0], samples))
-        action = list(map(lambda x: x[1], samples))
-        reward = list(map(lambda x: x[2], samples))
-        next_state = list(map(lambda x: x[3], samples))
-        done = list(map(lambda x: x[4], samples))
-        end_time = time.perf_counter()
-
+        # samples = random.sample(self.buffer, batch_size)
+        # state = list(map(lambda x: x[0], samples))
+        # action = list(map(lambda x: x[1], samples))
+        # reward = list(map(lambda x: x[2], samples))
+        # next_state = list(map(lambda x: x[3], samples))
+        # done = list(map(lambda x: x[4], samples))
+        # end_time = time.perf_counter()
+        state, action, reward, next_state, done = zip(*random.sample(self.buffer, batch_size))
         # if (end_time - start_time) > 1:
         #     print("Sample End, takes " + str(end_time - start_time) + "seconds\n")
 
-        return state, action, reward, next_state, done
+        return np.concatenate(state), action, reward, np.concatenate(next_state), done
 
     def __len__(self):
         return len(self.buffer)
