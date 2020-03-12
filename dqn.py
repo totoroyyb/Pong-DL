@@ -52,7 +52,7 @@ class QLearner(nn.Module):
             state = Variable(torch.FloatTensor(np.float32(state)).unsqueeze(0), requires_grad=True)
             # TODO: Given state, you should write code to get the Q value and chosen action
             with torch.no_grad():
-                action = torch.argmax(self.forward(state.cuda()))
+                action = torch.argmax(self.forward(state))
             # values = self.forward(state)
             # max_value = values.max().item()
             # action = ((values == max_value).nonzero().squeeze(0))[1].item()
