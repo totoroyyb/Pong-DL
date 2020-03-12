@@ -76,11 +76,11 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     for i in range(batch_size):
         if done[i].item() == 1:
             continue
-        next_state_max_q = target_model.forward(next_state[i]).max()
-        target = reward[i] + gamma * next_state_max_q
         curr_action = action[i].item()
-        prediction = model.forward(state[i]).squeeze(0)[curr_action]
-        loss += pow(target - prediction, 2)
+        next_state_max_q = model.forward(state[i]).squeeze(0)[curr_action]
+        predict = reward[i] + gamma * next_state_max_q
+        target = target_model.forward(next_state[i]).max()
+        loss += pow(predict - target, 2)
     
     return loss
 
