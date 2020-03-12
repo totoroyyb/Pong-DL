@@ -72,31 +72,31 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     reward = Variable(torch.FloatTensor(reward))
     done = Variable(torch.FloatTensor(done))
     # implement the loss function here
-    loss = 0
+
     # print("Start to computer loss")
     # start_time = time.perf_counter()
+    # loss = 0
+    # for i in range(batch_size):
+    #     next_state_max_q = target_model.forward(next_state[i]).max()
+    #     predict = reward[i]
+    #     if done[i].item() != 1:
+    #         predict += gamma * next_state_max_q
+    #     curr_action = action[i].item()
+    #     target = model.forward(state[i]).squeeze(0)[curr_action]
+    #     loss += pow(predict - target, 2)
 
-    for i in range(batch_size):
-        next_state_max_q = target_model.forward(next_state[i]).max()
-        predict = reward[i]
-        if done[i].item() != 1:
-            predict += gamma * next_state_max_q
-        curr_action = action[i].item()
-        target = model.forward(state[i]).squeeze(0)[curr_action]
-        loss += pow(predict - target, 2)
-        # curr_action = action[i].item()
-        # next_state_max_q = target_model.forward(next_state[i]).max()
-        # target = reward[i] + gamma * next_state_max_q
-        # predict = model.forward(state[i]).squeeze(0)[curr_action]
-        # loss += pow(target - predict, 2)
+    q_values = model(state)
+    next_q_values = model(next_state)
+    next_q_state_values = target_model(next_state)
 
-    # loss = loss.cuda()
-    #
+    q_value = q_values.gather(1, action.unsqueeze(1)).squeeze(1)
+    next_q_value = next_q_state_values.gather(1, torch.max(next_q_values, 1)[1].unsqueeze(1)).squeeze(1)
+
+    expected_q_value = reward + gamma * next_q_value * (1 - done)
+    loss = (q_value - autograd.Variable(expected_q_value.data)).pow(2).mean()
+
+
     # end_time = time.perf_counter()
-    #
-    # if (end_time - start_time) > 1:
-    #     print("Finish to computer loss, takes " + str(end_time - start_time) + " seconds")
-    
     return loss
 
 
@@ -125,7 +125,7 @@ class ReplayBuffer(object):
         # if (end_time - start_time) > 1:
         #     print("Sample End, takes " + str(end_time - start_time) + "seconds\n")
 
-        return state, action, reward, next_state, done
+        return np.concatenate(state), action, reward, np.concatenate(next_state), done
 
     def __len__(self):
         return len(self.buffer)
