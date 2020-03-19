@@ -85,15 +85,15 @@ def compute_td_loss(model, target_model, batch_size, gamma, replay_buffer):
     #     target = model.forward(state[i]).squeeze(0)[curr_action]
     #     loss += pow(predict - target, 2)
 
-    q_values = model(state)
+    curr_q_values = model(state)
     next_q_values = model(next_state)
     next_q_state_values = target_model(next_state)
 
-    q_value = q_values.gather(1, action.unsqueeze(1)).squeeze(1)
+    curr_q_value = curr_q_values.gather(1, action.unsqueeze(1)).squeeze(1)
     next_q_value = next_q_state_values.gather(1, torch.max(next_q_values, 1)[1].unsqueeze(1)).squeeze(1)
 
     expected_q_value = reward + gamma * next_q_value * (1 - done)
-    loss = (q_value - autograd.Variable(expected_q_value.data)).pow(2).mean()
+    loss = (curr_q_value - autograd.Variable(expected_q_value.data)).pow(2).mean()
 
 
     # end_time = time.perf_counter()
@@ -122,10 +122,12 @@ class ReplayBuffer(object):
         # done = list(map(lambda x: x[4], samples))
         # end_time = time.perf_counter()
         state, action, reward, next_state, done = zip(*random.sample(self.buffer, batch_size))
+        state = np.concatenate(state)
+        next_state = np.concatenate(next_state)
         # if (end_time - start_time) > 1:
         #     print("Sample End, takes " + str(end_time - start_time) + "seconds\n")
 
-        return np.concatenate(state), action, reward, np.concatenate(next_state), done
+        return state, action, reward, next_state, done
 
     def __len__(self):
         return len(self.buffer)

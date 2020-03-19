@@ -94,8 +94,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test_dqn_pong" />
       <item itemvalue="Python.run_dqn_pong" />
+      <item itemvalue="Python.test_dqn_pong" />
     </list>
   </component>
   <component name="SvnConfiguration">
